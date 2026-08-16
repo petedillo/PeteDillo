@@ -1,33 +1,60 @@
-# Hi, I'm Pedro 👋
+# Pedro Delgadillo
 
-I'm a **Full Stack Developer** and **ex-Apple Contractor** with a passion for building robust, automated systems. When I'm not developing production-grade applications, I'm usually deep in my **homelab**, architecting a smart, autonomous infrastructure where AI agents and GitOps principles converge.
+I build autonomous operations tooling on hardware I own, and I'm working on one
+question:
 
-## 🚀 PeteDillo Labs: The Autonomous Homelab
-My current obsession is building a "living" infrastructure. I operate a multi-node **Proxmox** cluster running **MicroK8s**, fully managed via **GitOps (ArgoCD)** and automated with **Ansible**.
+> **When an agent says it fixed something, how do you prove it did?**
 
-*   **The Vision:** A self-healing lab where my Discord bot (**Pete Bot**) acts as the brain, **Mission Control** is the nervous system, and content creation (blog, docs) is handled by autonomous LLM agents.
-*   **AI Integration:** I run a dedicated **Ollama** instance to power local LLMs for coding assistance, system triage, and automated content generation.
-*   **Modern Infrastructure:** Fully declarative setups using MetalLB, Cloudflare Tunnels, Sealed Secrets, and a centralized observability stack (Prometheus/Grafana).
+Self-reported success isn't evidence. Infrastructure has no universal test suite
+the way software does, so "the service came back up" ends up standing in for
+"the repair was correct" — and those are not the same claim. My MS thesis is a
+deterministic before-and-after verification framework for LLM-generated
+infrastructure repairs: **a model picks what to check; ordinary code does the
+checking.**
 
-## 🛠️ What I'm Building
-*   **<a href="https://github.com/PeteDio-Labs/pete-bot">Pete Bot</a>:** A proactive AI operations collaborator. It doesn't just answer questions; it monitors cluster events, triages incidents, and manages my homelab via Discord.
-*   **<a href="https://github.com/PeteDio-Labs/mission-control-backend">Mission Control</a>:** The central hub for my homelab services. It provides a unified API for interacting with Proxmox, Kubernetes, qBittorrent, and more.
-*   **<a href="https://github.com/PeteDio-Labs/web-search-service">Web Search Service</a>:** A high-performance Bun/Express microservice that meshes multiple search providers (SearXNG, Brave, Tavily) for my AI agents.
-*   **<a href="https://github.com/PeteDio-Labs/blog">The Blog</a>:** A Spring Boot 3 + React 19 platform transitioning into an LLM-maintained knowledge base, documenting every "sprint" of my homelab's evolution.
+MS Computer Science, Full Sail University. Previously a web developer, and an
+Apple contractor before that.
 
-## 💻 Tech Stack & Philosophy
-I believe in **"Automation First."** If I have to do it twice, I write a playbook for it.
+## The lab
 
-*   **Backend:** Java (Spring Boot), TypeScript (Bun/Node/Express), Go.
-*   **Frontend:** React 19, Vite, Tailwind CSS (preferring clean, "Neon-Dark" aesthetics).
-*   **Ops:** Kubernetes, ArgoCD, Ansible, Terraform, Proxmox, Docker.
-*   **AI/ML:** Ollama, LangChain, custom RAG pipelines.
+Not a hobby rack — it's the test environment for the above.
 
-## 🍏 The Apple Pedigree
-My time as a contractor at Apple instilled a deep appreciation for **surgical precision**, **clean abstractions**, and **user-centric design**. I carry those standards into everything I build—from high-scale enterprise code to my personal LVM migration scripts.
+- **19 LXCs** across two Proxmox nodes, snapshot-rollback per trial
+- **Terraform + Ansible**, validate-on-PR, apply-on-merge — so trials are reproducible
+- **Local inference** on a 3060 Ti — quantized 7–14B models, no frontier API in the loop
+- Vault, two MinIOs, self-hosted runners, Cloudflare tunnel
+
+Everything is IaC. The point of owning it is that I can break it on purpose and
+put it back.
+
+## What's here
+
+| | |
+|---|---|
+| **[petedio-iac](https://github.com/PeteDio-Labs/petedio-iac)** | Terraform + Ansible for the whole lab. Apply-on-merge. |
+| **[mission-control-backend](https://github.com/PeteDio-Labs/mission-control-backend)** | Control plane — task queue with row locking, zombie reaping, agent health transitions, and a typed human-approval gate over seven mutating action types. |
+| **[shared](https://github.com/PeteDio-Labs/shared)** | Agent harness: deterministic / tool-loop / plan-execute execution modes, with `gate()` and `dryRun()` hooks on the tool interface. |
+| **[mcp-homelab](https://github.com/PeteDio-Labs/mcp-homelab)** | MCP server exposing the lab as 33 tools, with an approval handshake. |
+
+## Things I learned the hard way
+
+- **Local models fail at tool calling on the chat template, not on model size.**
+  Coder models emit the call as plain text in `message.content` so it's never
+  parsed into `tool_calls`; general models return structured calls and then
+  overwrite instead of append. Identical on `/v1` and native `/api/chat`. Swapping
+  to a bigger model doesn't fix it — a deterministic single-shot path does.
+- **A passing test suite is not evidence of a complete implementation.** One
+  generated PR shipped a third of its spec and went green.
+- **Never gate a 7B on another 7B's critique.** An LLM grading an LLM is not a
+  verification step, it's a second opinion with the same failure modes.
+- **Telemetry semantics lie if you let them.** A dashboard counting
+  runs-without-verdicts as "open PRs" is confidently wrong and looks fine.
+
+## Stack
+
+Bun/TypeScript · Python · Terraform · Ansible · Proxmox · Postgres · Ollama ·
+Prometheus · MCP
 
 ---
-*"Building the future, one container at a time."*
 
-<a href="https://petedillo.com">Website</a> • <a href="https://www.linkedin.com/in/pedrodelgadillo/">LinkedIn</a> • <a href="https://github.com/PeteDio-Labs/PeteDio-Labs/blob/main/project-management/STATUS.md">Homelab Status</a>
-
+<a href="https://www.linkedin.com/in/pedrodelgadillo/">LinkedIn</a>
