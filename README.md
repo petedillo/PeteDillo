@@ -19,8 +19,8 @@ and those are different claims. My MS thesis is a deterministic before-and-after
 verification framework for LLM-generated infrastructure repairs: **a model picks
 what to check; ordinary code does the checking.**
 
-MS Computer Science, Full Sail University. Previously a web developer, and an
-Apple contractor before that.
+Web development degree and MS in Computer Science (Full Sail University).
+Previously a full-stack engineer at Apple for a year.
 
 ## Selected work
 
