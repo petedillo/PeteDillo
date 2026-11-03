@@ -28,10 +28,10 @@ Four case studies, written up at [pdlab.dev](https://pdlab.dev):
 
 | | |
 |---|---|
-| **A review-gated agent team** | Each task gets its own AI session. Every pull request gets a review, and a tiered gate scores each PR's blast radius to decide what merges on its own. No session merges its own work in the infrastructure repo. **970 PRs merged across eight repositories; the peak week (19 October) had 214**, 211 opened by Claude sessions. Counts run through 2 November, by merge date, in UTC weeks. They measure throughput, not quality. |
+| **A review-gated agent team** | Each task gets its own AI session. Every pull request gets a review, and a tiered gate scores each PR's blast radius to decide what merges on its own. The merge desk's code merges the low tiers, a separate reviewer thread merges tier 2, and no session merges its own PR in the infrastructure repo. **970 PRs merged across eight repositories; the peak week (19 October) had 214**, 211 opened by Claude sessions. Counts run through 2 November, by merge date, in UTC weeks. The agent-versus-hand split is a heuristic (PR author or Claude footer). The counts measure throughput, not quality. |
 | **A household finance agent (Muse)** | Read-only access to email and bank data. Its only write access is calendar events and spreadsheet cells. It verifies each fact at its source before it states a number, and reads back every change. |
-| **Short-lived SSH access** | Per-role SSH through Vault-signed certificates, with a time-limited break-glass path. Phase 1 shipped beside the static keys, so it has not replaced them yet. |
-| **A self-hosted LLM** | Qwen3 8B on a consumer GPU at about 70 tokens per second, with an embedding model on a second GPU and a search service the agents share. The budget had no API credit, so the lab's internal agent moved off a hosted API. |
+| **Short-lived SSH access** | Per-role SSH through Vault-signed certificates, with a time-limited break-glass path. Phase 1 plus six follow-up PRs shipped beside the static keys: roles last 30 or 60 minutes. As of 3 November no canary host has passed, so no host has dropped static keys. |
+| **A self-hosted LLM** | Qwen3 8B on a consumer GPU, run with thinking off: 128 tokens per second, or 71 with it on (measured 4 September). An embedding model on a second GPU backs a search service over four sources: the vault, the tracker, a lab digest and repo docs. The budget had no API credit, so the lab's internal agent moved off a hosted API. |
 
 ## The lab
 
@@ -58,8 +58,8 @@ put it back.
 
 ## Things I learned the hard way
 
-- **A green check can sit on top of work that never happened.** A nightly job
-  reported success on eleven repos while scanning none, because a failed token step
+- **A green check can sit on top of work that never happened.** During a 9.5-hour sealed-store outage on 9 September, a nightly
+  job reported success on eleven repos while reconciling none, because a failed token step
   was set to continue. Now each status job fails non-zero and says what it
   examined, not only what it found.
 - **Limit what an agent can do before you tune how well it does it.** Read-only
