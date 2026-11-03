@@ -1,6 +1,7 @@
 # Pedro Delgadillo
 
-I build autonomous operations tooling on hardware I own, and I'm working on one
+I build systems with AI, and I look for work where an AI agent runs real
+operations safely. I build the tooling on hardware I own, and I'm working on one
 question:
 
 > **When an agent says it fixed something, how do you prove it did?**
@@ -15,14 +16,31 @@ checking.**
 MS Computer Science, Full Sail University. Previously a web developer, and an
 Apple contractor before that.
 
+## Selected work
+
+Four case studies from running the lab, written up at **[pdlab.dev](https://pdlab.dev)**:
+
+- **A review-gated agent team.** Each task gets its own AI session, every pull
+  request gets a review, and a tiered merge gate scores each PR's blast radius.
+  970 PRs merged across eight repositories, with a peak week of 214. About 98%
+  of that week's PRs were opened by Claude sessions. Throughput is the measure,
+  not quality.
+- **A household finance agent (Muse).** Read-only access to email, calendar and
+  bank data. It verifies each fact at its source before it states a number and
+  reads back every change it makes.
+- **Short-lived SSH access.** Per-role SSH through Vault-signed certificates, with
+  a time-limited break-glass path.
+- **A self-hosted LLM.** Qwen3 8B on a consumer GPU at about 70 tokens per second,
+  with a shared search service, after the budget left no API credit.
+
 ## The lab
 
-Not a hobby rack — it's the test environment for the above.
+Not a hobby rack. It's the test environment for the above.
 
-- **19 LXCs** across two Proxmox nodes, snapshot-rollback per trial
-- **Terraform + Ansible**, validate-on-PR, apply-on-merge — so trials are reproducible
-- **Local inference** on a 3060 Ti — quantized 7–14B models, no frontier API in the loop
-- Vault, two MinIOs, self-hosted runners, Cloudflare tunnel
+- **About two dozen LXCs and VMs** across three Proxmox nodes
+- **Terraform + Ansible**, validate-on-PR, apply-on-merge, so changes are reproducible
+- **Local inference** on consumer GPUs, with no frontier API in the loop
+- Vault, MinIO, self-hosted runners, Cloudflare tunnel, Prometheus and Grafana
 
 Everything is IaC. The point of owning it is that I can break it on purpose and
 put it back.
@@ -57,4 +75,4 @@ Prometheus · MCP
 
 ---
 
-<a href="https://www.linkedin.com/in/pedrodelgadillo/">LinkedIn</a>
+<a href="https://pdlab.dev">Portfolio</a> · <a href="https://www.linkedin.com/in/pedrodelgadillo/">LinkedIn</a>
