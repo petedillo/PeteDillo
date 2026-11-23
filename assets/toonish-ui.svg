@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 230" role="img" aria-labelledby="t d">
+<title id="t">toonish-ui</title>
+<desc id="d">Card for toonish-ui, my comic-style UI kit. Colour swatches: ink, paper, blue, violet, bubblegum, vermilion.</desc>
+<defs><pattern id="dots" width="14" height="14" patternUnits="userSpaceOnUse"><circle cx="7" cy="7" r="2" fill="#9b7bff" opacity=".4"/></pattern></defs>
+<rect width="900" height="230" fill="#0a0a1f"/><rect width="900" height="230" fill="url(#dots)"/>
+<rect x="34" y="34" width="840" height="170" fill="#ff94c8"/>
+<rect x="22" y="22" width="840" height="170" fill="#fff6dc" stroke="#0a0a1f" stroke-width="5"/>
+<text x="46" y="92" font-family="Impact, Haettenschweiler, \x27Arial Narrow Bold\x27, \x27Arial Black\x27, sans-serif" font-size="64" textLength="340" lengthAdjust="spacingAndGlyphs" fill="#ff4b3e" stroke="#0a0a1f" stroke-width="8" paint-order="stroke" stroke-linejoin="round">TOONISH-UI</text>
+<text x="46" y="128" font-family="-apple-system, \x27Segoe UI\x27, Helvetica, Arial, sans-serif" font-size="21" font-weight="700" fill="#0a0a1f">My comic-style UI kit. Accessible first, WCAG 2.2 AA.</text>
+<text x="46" y="154" font-family="-apple-system, \x27Segoe UI\x27, Helvetica, Arial, sans-serif" font-size="21" font-weight="700" fill="#0a0a1f">Powers pdlab.dev and the lab dashboard.</text>
+<g stroke="#0a0a1f" stroke-width="4">
+<rect x="520" y="150" width="46" height="30" fill="#0a0a1f"/><rect x="574" y="150" width="46" height="30" fill="#fff6dc"/>
+<rect x="628" y="150" width="46" height="30" fill="#3d7bff"/><rect x="682" y="150" width="46" height="30" fill="#9b7bff"/>
+<rect x="736" y="150" width="46" height="30" fill="#ff94c8"/><rect x="790" y="150" width="46" height="30" fill="#ff4b3e"/></g>
+</svg>

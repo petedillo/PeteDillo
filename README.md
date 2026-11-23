@@ -1,4 +1,4 @@
-# Pedro Delgadillo
+<h1 align="center"><img src="assets/banner.svg" alt="Pedro Delgadillo. I build systems with AI. Every change gets proved." width="100%"></h1>
 
 **I build systems with AI.** I run a homelab platform shaped like AWS, and I run it
 with a team of AI agents. Every change goes through a pull request, a review and a
@@ -11,7 +11,7 @@ operations safely.
 
 ## The question I work on
 
-> **When an agent says it fixed something, how do you prove it did?**
+<img src="assets/question.svg" alt="The question I work on: when an agent says it fixed something, how do you prove it did?" width="100%">
 
 Self-reported success isn't evidence. Infrastructure has no universal test suite,
 so "the service came back up" ends up standing in for "the repair was correct",
@@ -55,6 +55,14 @@ put it back.
 |---|---|
 | **[petedio-iac](https://github.com/PeteDio-Labs/petedio-iac)** | Terraform and Ansible for the whole lab. Apply on merge. |
 | **[pete-bot](https://github.com/PeteDio-Labs/pete-bot)** | The Discord surface for the lab: reports, alerts and the merge desk. |
+| **[toonish-ui](https://github.com/PeteDio-Labs/Toonish-ui)** | The comic-style UI kit behind this page and my portfolio. |
+
+## The UI kit
+
+<a href="https://github.com/PeteDio-Labs/Toonish-ui"><img src="assets/toonish-ui.svg" alt="toonish-ui: my comic-style UI kit, accessible first, WCAG 2.2 AA. It powers pdlab.dev and the lab dashboard. Colours: ink, paper, blue, violet, bubblegum and vermilion." width="100%"></a>
+
+The banners on this page use the kit's palette. GitHub does not load CSS, so they
+are plain SVG. See the kit in use at [pdlab.dev](https://pdlab.dev).
 
 ## Things I learned the hard way
 
