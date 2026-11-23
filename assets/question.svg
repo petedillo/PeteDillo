@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 190" role="img" aria-labelledby="t d">
+<title id="t">The question I work on</title>
+<desc id="d">When an agent says it fixed something, how do you prove it did?</desc>
+<rect width="900" height="190" fill="#0a0a1f"/>
+<rect x="30" y="30" width="850" height="140" fill="#3d7bff"/>
+<rect x="18" y="18" width="850" height="140" fill="#fff6dc" stroke="#0a0a1f" stroke-width="5"/>
+<rect x="18" y="18" width="320" height="38" fill="#ff4b3e" stroke="#0a0a1f" stroke-width="5"/>
+<text x="34" y="46" font-family="Impact, Haettenschweiler, \x27Arial Narrow Bold\x27, \x27Arial Black\x27, sans-serif" font-size="24" textLength="280" lengthAdjust="spacingAndGlyphs" fill="#fff6dc">THE QUESTION I WORK ON</text>
+<text x="40" y="100" font-family="-apple-system, \x27Segoe UI\x27, Helvetica, Arial, sans-serif" font-size="27" font-weight="800" fill="#0a0a1f">When an agent says it fixed something,</text>
+<text x="40" y="138" font-family="-apple-system, \x27Segoe UI\x27, Helvetica, Arial, sans-serif" font-size="27" font-weight="800" fill="#0a0a1f">how do you prove it did?</text>
+</svg>

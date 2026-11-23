@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 280" role="img" aria-labelledby="t d">
+<title id="t">Pedro Delgadillo</title>
+<desc id="d">Comic-style banner: Pedro Delgadillo, I build systems with AI.</desc>
+<defs><pattern id="dots" width="16" height="16" patternUnits="userSpaceOnUse"><circle cx="8" cy="8" r="2.4" fill="#9b7bff" opacity=".45"/></pattern></defs>
+<rect width="900" height="280" fill="#0a0a1f"/>
+<rect width="900" height="280" fill="url(#dots)"/>
+<rect x="6" y="6" width="888" height="268" fill="none" stroke="#ff94c8" stroke-width="4"/>
+<g transform="rotate(-2 450 120)">
+<rect x="58" y="44" width="790" height="142" fill="#ff4b3e"/>
+<rect x="46" y="34" width="790" height="142" fill="#fff6dc" stroke="#0a0a1f" stroke-width="6"/>
+<text x="76" y="132" font-family="Impact, Haettenschweiler, \x27Arial Narrow Bold\x27, \x27Arial Black\x27, sans-serif" font-size="80" textLength="720" lengthAdjust="spacingAndGlyphs" fill="#ff94c8" stroke="#0a0a1f" stroke-width="10" paint-order="stroke" stroke-linejoin="round" transform="translate(5 5)">PEDRO DELGADILLO</text>
+<text x="76" y="132" font-family="Impact, Haettenschweiler, \x27Arial Narrow Bold\x27, \x27Arial Black\x27, sans-serif" font-size="80" textLength="720" lengthAdjust="spacingAndGlyphs" fill="#3d7bff" stroke="#0a0a1f" stroke-width="10" paint-order="stroke" stroke-linejoin="round">PEDRO DELGADILLO</text>
+</g>
+<g transform="rotate(1 450 225)">
+<rect x="150" y="206" width="600" height="46" fill="#ff94c8"/>
+<rect x="144" y="200" width="600" height="46" fill="#0a0a1f" stroke="#fff6dc" stroke-width="3"/>
+<text x="444" y="233" text-anchor="middle" font-family="-apple-system, \x27Segoe UI\x27, Helvetica, Arial, sans-serif" font-size="22" font-weight="800" fill="#fff6dc">I build systems with AI. Every change gets proved.</text>
+</g>
+</svg>
